@@ -1,0 +1,30 @@
+{
+  "name": "sapui5-downloader-core",
+  "version": "1.0.0",
+  "description": "Package which provides a convenient way to download zip files from tools.hana.ondemand.com",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js",
+    "test": "npm run lint"
+  },
+  "repository": "https://github.com/bastilimbach/sapui5/tree/master/packages/sapui5-downloader-core",
+  "bugs": "https://github.com/bastilimbach/sapui5/issues",
+  "author": "Sebastian Limbach <hello@sebastianlimbach.com>",
+  "license": "MIT",
+  "keywords": [
+    "openui5",
+    "sapui5",
+    "runtime",
+    "local",
+    "sap",
+    "webide",
+    "abap"
+  ],
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "node-stream-zip": "^1.8.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.8"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+        "node": true
+    },
+    "rules": {
+        "semi": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "no-console": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off"
+    }
+}

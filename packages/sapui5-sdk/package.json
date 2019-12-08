@@ -1,0 +1,30 @@
+{
+  "name": "sapui5-sdk",
+  "version": "1.0.0",
+  "description": "Downloads the official SAPUI5 SDK for local development",
+  "main": "src/index.js",
+  "scripts": {
+    "postinstall": "node src/install.js",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint --fix src/**/*.js",
+    "test": "npm run lint"
+  },
+  "repository": "https://github.com/bastilimbach/sapui5/tree/master/packages/sapui5-sdk",
+  "bugs": "https://github.com/bastilimbach/sapui5/issues",
+  "author": "Sebastian Limbach <hello@sebastianlimbach.com>",
+  "license": "MIT",
+  "keywords": [
+    "openui5",
+    "sapui5",
+    "runtime",
+    "local",
+    "sap",
+    "webide",
+    "abap"
+  ],
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "progress": "^2.0.3",
+    "sapui5-downloader-core": "^1.0.0"
+  }
+}
