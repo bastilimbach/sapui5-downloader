@@ -1,6 +1,6 @@
 {
   "name": "sapui5-runtime",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Downloads the official SAPUI5 runtime for local development",
   "main": "src/index.js",
   "scripts": {
