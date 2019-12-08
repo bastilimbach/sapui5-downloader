@@ -1,16 +1,16 @@
-# SAPUI5 Runtime
-A package which downloads the official SAPUI5 runtime from [https://tools.hana.ondemand.com/](https://tools.hana.ondemand.com/#sapui5) for local development.
+# SAPUI5 SDK
+A package which downloads the official SAPUI5 SDK from [https://tools.hana.ondemand.com/](https://tools.hana.ondemand.com/#sapui5) for local development.
 
 ## Installation
 By using this npm package you agree to the EULA from SAP: [https://tools.hana.ondemand.com/developer-license-3_1.txt/](https://tools.hana.ondemand.com/developer-license-3_1.txt/)
 ```bash
-npm install -D sapui5-runtime
+npm install -D sapui5-sdk
 ```
 or
 ```bash
-yarn add -D sapui5-runtime
+yarn add -D sapui5-sdk
 ```
-This will download and unzip the latest SAPUI5 runtime.
+This will download and unzip the latest SAPUI5 SDK.
 
 ### Proxy support
 It is possible to use this package behind a proxy by setting the environment variables `HTTP_PROXY` and `HTTPS_PROXY`.
@@ -33,25 +33,26 @@ set HTTPS_PROXY=https://hostname:port
 In case you need a specific version of SAPUI5 you can specify it in your `package.json`.
 Add the following line to your `package.json`:
 ```json
-"sapui5-runtime": {
+"sapui5-sdk": {
   "version": "X.Y.Z"
 }
 ```
 You need to replace `X.Y.Z` with a valid version from [https://tools.hana.ondemand.com/](https://tools.hana.ondemand.com/#sapui5).
 
-**If you already added sapui5-runtime to your dependencies** you need to run `npm rebuild` after setting a specified version. If you added this setting to your `package.json` **before** installing the package, you can just install sapui5-runtime as usual.
+**If you already added sapui5-sdk to your dependencies** you need to run `npm rebuild` after setting a specified version. If you added this setting to your `package.json` **before** installing the package, you can just install sapui5-sdk as usual.
 
 ## Get started
-After a successful installation you can use a server to serve the runtime as static files.
+After a successful installation you can use a server to serve the SDK as static files.
 
 
 ### [Express](https://github.com/expressjs/express) example
 ```javascript
 const express = require('express')
-const sapui5 = require('sapui5-runtime')
+const sapui5 = require('sapui5-sdk')
 const app = express()
 
-app.use('/resources', express.static(sapui5))
+app.use('/resources', express.static(sapui5.resources))
+app.use('/test-resources', express.static(sapui5.testResources))
 
 app.listen(3000)
 ```
@@ -60,7 +61,7 @@ app.listen(3000)
 ```javascript
 const Hapi = require('hapi')
 const inert = require('inert')
-const sapui5 = require('sapui5-runtime')
+const sapui5 = require('sapui5-sdk')
 
 const server = Hapi.server({
     port: 3000,
@@ -71,10 +72,10 @@ const init = async () => {
     await server.register(inert)
     server.route({
         method: 'GET',
-        path: '/resources/{param*}',
+        path: '/{param*}',
         handler: {
             directory: {
-                path: sapui5
+                path: sapui5.root
             }
         }
     });
@@ -86,7 +87,7 @@ init()
 
 ### [Grunt OpenUI5](https://github.com/SAP/grunt-openui5) example
 ```javascript
-const sapui5 = require('sapui5-runtime')
+const sapui5 = require('sapui5-sdk')
 
 module.exports = function (grunt) {
   grunt.initConfig({
@@ -100,7 +101,8 @@ module.exports = function (grunt) {
     },
     openui5_connect: {
       options: {
-        resources: [sapui5],
+        resources: [sapui5.resources],
+        testresources: [sapui5.testResources],
         cors: {
           origin: '*'
         }
@@ -178,4 +180,4 @@ I'm happy to accept Pull Requests! Please note that this project is released wit
 This project was heavily inspired by [openui5.runtime.downloader](https://github.com/maugenst/openui5.runtime.downloader) by [Marius Augenstein](https://github.com/maugenst).
 
 ## License
-[MIT](https://github.com/bastilimbach/sapui5-downloader/blob/master/packages/sapui5-runtime/LICENSE) :heart:
+[MIT](https://github.com/bastilimbach/sapui5-downloader/blob/master/packages/sapui5-sdk/LICENSE) :heart:
