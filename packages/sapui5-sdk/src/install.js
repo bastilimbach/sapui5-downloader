@@ -7,7 +7,7 @@ const packageJSONPath = path.resolve(`${__dirname}/../../../package.json`)
 let config
 try {
   const packageJSON = require(packageJSONPath)
-  config = packageJSON['sapui5-runtime'] || {}
+  config = packageJSON['sapui5-sdk'] || {}
 } catch (error) {
   config = {}
 }
