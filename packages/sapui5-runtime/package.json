@@ -9,8 +9,8 @@
     "lint:fix": "eslint --fix src/**/*.js",
     "test": "npm run lint"
   },
-  "repository": "https://github.com/bastilimbach/sapui5/tree/master/packages/sapui5-runtime",
-  "bugs": "https://github.com/bastilimbach/sapui5/issues",
+  "repository": "https://github.com/bastilimbach/sapui5-downloader/tree/master/packages/sapui5-runtime",
+  "bugs": "https://github.com/bastilimbach/sapui5-downloader/issues",
   "author": "Sebastian Limbach <hello@sebastianlimbach.com>",
   "license": "MIT",
   "keywords": [
