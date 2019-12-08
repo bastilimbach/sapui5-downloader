@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/bastilimbach/sapui5-downloader/tree/master/packages/sapui5-sdk/compare/sapui5-sdk@1.0.3...sapui5-sdk@1.0.4) (2019-12-08)
+
+
+### Bug Fixes
+
+* wrong package json config name ([27d22d4](https://github.com/bastilimbach/sapui5-downloader/tree/master/packages/sapui5-sdk/commit/27d22d419f67c2c8f78c2112087311ca4d7464c6))
+
+
+
+
+
 ## [1.0.3](https://github.com/bastilimbach/sapui5-downloader/tree/master/packages/sapui5-sdk/compare/sapui5-sdk@1.0.2...sapui5-sdk@1.0.3) (2019-12-08)
 
 **Note:** Version bump only for package sapui5-sdk
