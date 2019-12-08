@@ -8,7 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "lerna run test --stream"
+    "test": "lerna run test --stream",
+    "release": "lerna publish"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
