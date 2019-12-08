@@ -1,6 +1,6 @@
 {
   "name": "sapui5-downloader-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Package which provides a convenient way to download SAPUI5 from tools.hana.ondemand.com",
   "main": "src/index.js",
   "scripts": {
