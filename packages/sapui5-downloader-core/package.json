@@ -1,6 +1,6 @@
 {
   "name": "sapui5-downloader-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package which provides a convenient way to download zip files from tools.hana.ondemand.com",
   "main": "src/index.js",
   "scripts": {
