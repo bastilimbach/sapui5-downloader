@@ -1,6 +1,6 @@
 {
   "name": "sapui5-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Downloads the official SAPUI5 SDK for local development",
   "main": "src/index.js",
   "scripts": {
