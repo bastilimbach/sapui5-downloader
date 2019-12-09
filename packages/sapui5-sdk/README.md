@@ -85,6 +85,41 @@ const init = async () => {
 init()
 ```
 
+### [UI5 Tooling](https://github.com/SAP/ui5-tooling/) example
+Add the custom UI5 middleware to serve static resources:
+```bash
+npm install -D ui5-middleware-servestatic
+```
+or
+```bash
+yarn add -D ui5-middleware-servestatic
+```
+
+Add the UI5 dependency declaration to `package.json`:
+```json
+"ui5": {
+  "dependencies": [
+    "ui5-middleware-servestatic"
+  ]
+}
+```
+
+Add the custom middleware configuration to `ui5.yaml`
+```yaml
+server:
+  customMiddleware:
+  - name: ui5-middleware-servestatic
+    afterMiddleware: compression
+    mountPath: /resources
+    configuration:
+      rootPath: "./node_modules/sapui5-sdk/lib/resources"
+  - name: ui5-middleware-servestatic
+    afterMiddleware: compression
+    mountPath: /test-resources
+    configuration:
+      rootPath: "./node_modules/sapui5-sdk/lib/test-resources"
+```
+
 ### [Grunt OpenUI5](https://github.com/SAP/grunt-openui5) example
 ```javascript
 const sapui5 = require('sapui5-sdk')
