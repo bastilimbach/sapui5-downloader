@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.5](https://github.com/bastilimbach/sapui5-downloader/tree/master/packages/sapui5-runtime/compare/sapui5-runtime@1.5.4...sapui5-runtime@1.5.5) (2019-12-09)
+
+**Note:** Version bump only for package sapui5-runtime
+
+
+
+
+
 ## [1.5.4](https://github.com/bastilimbach/sapui5-downloader/tree/master/packages/sapui5-runtime/compare/sapui5-runtime@1.5.3...sapui5-runtime@1.5.4) (2019-12-08)
 
 **Note:** Version bump only for package sapui5-runtime
