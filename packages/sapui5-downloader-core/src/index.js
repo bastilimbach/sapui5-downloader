@@ -105,6 +105,7 @@ class Downloader {
 
     console.warn('By using this npm package you agree to the EULA from SAP: https://tools.hana.ondemand.com/developer-license-3_1.txt/')
     console.log('Downloading SAPUI5...')
+    console.log(`SAPUI5 download URL: ${sapui5DownloadURL}`)
 
     const zipFile = path.join(this.directories.download, 'sapui5.zip')
 
