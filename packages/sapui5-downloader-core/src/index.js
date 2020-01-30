@@ -100,6 +100,8 @@ class Downloader {
 
     const sapui5DownloadURL = url.resolve(this.downloadEndpoint.href, `sapui5-${this.type}-${sapui5Version}.zip`)
 
+    console.log(`SAPUI5 download URL: ${sapui5DownloadURL}`)
+
     await fs.remove(this.directories.download)
     await fs.mkdirp(this.directories.download)
 
