@@ -146,27 +146,30 @@ class Downloader {
   async extractSAPUI5(zipFile, updateProgress) {
     console.log(`Extracting SAPUI5 to ${this.directories.extract}`)
 
-    await fs.remove(this.directories.extract)
-    await fs.mkdirp(this.directories.extract)
+    return new Promise(async (resolve) => {
+      await fs.remove(this.directories.extract)
+      await fs.mkdirp(this.directories.extract)
 
-    const zip = new StreamZip({
-      file: zipFile,
-      storeEntries: true,
-    })
+      const zip = new StreamZip({
+        file: zipFile,
+        storeEntries: true,
+      })
 
-    zip.on('ready', () => {
-      zip
-        .on('extract', () => {
-          if (updateProgress) {
-            updateProgress(zip.entriesCount)
-          }
-        })
-        .extract(null, this.directories.extract, () => {
-          zip.close(() => {
-            console.log('SAPUI5 extracted')
+      zip.on('ready', () => {
+        zip
+          .on('extract', () => {
+            if (updateProgress) {
+              updateProgress(zip.entriesCount)
+            }
           })
-        })
-    })
+          .extract(null, this.directories.extract, () => {
+            zip.close(() => {
+              console.log('SAPUI5 extracted')
+              resolve();
+            })
+          })
+      })
+    });
   }
 }
 
